@@ -1,0 +1,173 @@
+:root {
+  --default-fz: 1.6rem;
+  --default-ff: 'Montserrat', sans-serif;
+
+  --header-height: 7rem;
+  --footer-height: 8rem;
+
+  --light-shadow: 0px 0px 7px 0px rgba(0, 0, 0, .5);
+
+  --color-secondary: #61513E;
+  --color-light: #f7f8fa;
+  --color-light-1: #ccc;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: var(--default-ff);
+  font-size: var(--default-fz);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.nav {
+  background: var(--color-light);
+  color: var(--color-light);
+  box-shadow: var(--light-shadow);
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+}
+
+.nav__container {
+  display: flex;
+  align-items: center;
+}
+
+.nav__logo {
+  color: var(--color-secondary);
+}
+
+.nav__link {
+  margin-left: auto;
+}
+
+.nav__link a:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.home__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home img {
+  width: 60%;
+}
+
+.active {
+  color: var(--color-secondary);
+}
+
+.main {
+  min-height: calc(100vh - (var(--header-height) + var(--footer-height)));
+  padding: 3rem 0;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.users__title {
+  text-align: center;
+  margin: 5rem 0;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.user img {
+  border-radius: 50%;
+}
+
+.users__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
+button {
+  border: none;
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  background: var(--color-secondary);
+  color: var(--color-light);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: var(--color-light-1);
+  cursor: not-allowed;
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  border: 5px solid var(--color-light-1);
+  border-radius: 50%;
+  border-top-color: var(--color-secondary);
+  animation: spinner 2s linear infinite;
+}
+
+.loading-center {
+  margin: 0 auto;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.error img {
+  width: 30%;
+}
+
+.footer {
+  min-height: var(--footer-height);
+  box-shadow: var(--light-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
